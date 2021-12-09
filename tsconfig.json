@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/",
+    "target": "esnext",
+    "module": "commonjs",
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "types": ["react/next", "react-dom/next"]
+  },
+  "includes": ["src"]
+}
