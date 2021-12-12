@@ -1,7 +1,20 @@
 import React from 'react';
 
+import CardPane from 'components/CardPane';
+import mockCards from 'components/CardPane/mock';
+import GlobalStyle from 'GlobalStyle';
+
 const App = () => {
-  return <div>Hello idus</div>;
+  return (
+    <>
+      <GlobalStyle />
+      <ul>
+        {mockCards.map((card) => (
+          <CardPane key={card.id} {...card} />
+        ))}
+      </ul>
+    </>
+  );
 };
 
 export default App;
