@@ -5,7 +5,7 @@ import PALETTE from 'constants/palette';
 import { MEDIA_QUERY } from 'constants/mediaQuery';
 
 const Root = styled.div`
-  max-width: 250px;
+  max-width: 240px;
   margin: auto;
   user-select: none;
 
