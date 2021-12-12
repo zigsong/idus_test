@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 import { MEDIA_QUERY } from 'constants/mediaQuery';
 
+const Root = styled.div`
+  max-width: 1080px;
+  margin: auto;
+`;
+
 const CardsContainer = styled.ul`
   padding: 1rem;
   display: grid;
@@ -15,4 +20,10 @@ const CardsContainer = styled.ul`
   }
 `;
 
-export default { CardsContainer };
+const FormsContainer = styled.div`
+  & > * {
+    margin: 1rem;
+  }
+`;
+
+export default { Root, CardsContainer, FormsContainer };

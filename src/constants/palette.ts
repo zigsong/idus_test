@@ -7,13 +7,16 @@ const PALETTE = {
     BG_400: '#F8F8F8',
   },
   RED: {
-    TEXT_400: '#FF0000',
+    TEXT_400: '#EA4C46',
   },
   BLACK: {
     TEXT_400: '#000000',
   },
   YELLOW: {
     STAR_400: '#FFDA00',
+  },
+  BLUE: {
+    BUTTON_400: '#4D96FB',
   },
 };
 
