@@ -92,6 +92,7 @@ const Star = styled.div`
   height: 20px;
   border-radius: 50%;
   background: ${PALETTE.GRAY.CIRCLE_400};
+  vertical-align: text-top;
 
   &:not(:last-child) {
     margin-right: 4px;
