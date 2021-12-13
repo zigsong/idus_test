@@ -9,7 +9,7 @@ interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 
 const Form = ({ defaultValue, hasButton, readOnly, disabled }: Props) => {
   const [value, setValue] = useState(defaultValue);
-  const [wordCount, setWordCount] = useState(defaultValue.length);
+  const [wordCount, setWordCount] = useState(defaultValue?.length || 0);
 
   const handleInput: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
     setValue(event.target.value);
@@ -17,10 +17,12 @@ const Form = ({ defaultValue, hasButton, readOnly, disabled }: Props) => {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
+    alert('입력 완료');
+    setValue('');
   };
 
   useEffect(() => {
-    setWordCount(value.length);
+    setWordCount(value?.length || 0);
   }, [value]);
 
   return (
@@ -30,6 +32,7 @@ const Form = ({ defaultValue, hasButton, readOnly, disabled }: Props) => {
         <Styled.TextArea
           id="review"
           value={value}
+          placeholder={value ? value : '내용을 입력해주세요'}
           onChange={handleInput}
           readOnly={readOnly}
           disabled={disabled}
@@ -37,7 +40,7 @@ const Form = ({ defaultValue, hasButton, readOnly, disabled }: Props) => {
         <Styled.WordCount>{wordCount}</Styled.WordCount>
       </Styled.TextAreaWrapper>
       {hasButton && (
-        <Styled.SubmitButton aria-label="save" disabled={!value}>
+        <Styled.SubmitButton aria-label="save" disabled={!value || value === defaultValue}>
           Save
         </Styled.SubmitButton>
       )}
