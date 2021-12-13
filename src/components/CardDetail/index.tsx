@@ -16,21 +16,21 @@ const Vertical = ({ label, title, price, isHighlighted, stars, review }: CardTyp
           <Styled.Price>{price}</Styled.Price>
         </Styled.PriceWrapper>
       </Styled.Container>
-      {(stars || review) && (
+      {stars || review ? (
         <>
           <Styled.Divider />
           <Styled.Container>
-            {stars && (
+            {stars ? (
               <Styled.StarsContainer score={stars}>
                 {Array.from({ length: SCORE_MAX }, (_, idx) => (
                   <Styled.Star key={idx} />
                 ))}
               </Styled.StarsContainer>
-            )}
-            {review && <Styled.Review>{review}</Styled.Review>}
+            ) : null}
+            {review ? <Styled.Review>{review}</Styled.Review> : null}
           </Styled.Container>
         </>
-      )}
+      ) : null}
     </Styled.Root>
   );
 };
