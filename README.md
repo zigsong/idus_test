@@ -1,4 +1,7 @@
 # 아이디어스 과제 - 송지은
+👉 [배포 URL](https://idus-jieun.netlify.app/)
+👉 [storybook URL](https://61b699b2ee5f2b003a82d55d-yntibwlnwe.chromatic.com/?path=/story/form--placeholder)
+
 ✅ React와 TypeScript를 사용했습니다.
 ✅ webpack으로 번들링을 해주었습니다. 
 ✅ 스타일링에는 styled-components를 사용했습니다. 
