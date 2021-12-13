@@ -3,11 +3,12 @@ import React, { TextareaHTMLAttributes, useEffect, useState } from 'react';
 import Styled from './styles';
 
 interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  id: string;
   defaultValue?: string;
   hasButton: boolean;
 }
 
-const Form = ({ defaultValue, hasButton, readOnly, disabled }: Props) => {
+const Form = ({ id, defaultValue, hasButton, readOnly, disabled }: Props) => {
   const [value, setValue] = useState(defaultValue);
   const [wordCount, setWordCount] = useState(defaultValue?.length || 0);
 
@@ -27,10 +28,10 @@ const Form = ({ defaultValue, hasButton, readOnly, disabled }: Props) => {
 
   return (
     <Styled.Root onSubmit={handleSubmit}>
-      <Styled.Label htmlFor="review"></Styled.Label>
+      <Styled.Label htmlFor={id}></Styled.Label>
       <Styled.TextAreaWrapper>
         <Styled.TextArea
-          id="review"
+          id={id}
           value={value}
           placeholder={value ? value : '내용을 입력해주세요'}
           onChange={handleInput}
@@ -40,9 +41,7 @@ const Form = ({ defaultValue, hasButton, readOnly, disabled }: Props) => {
         <Styled.WordCount>{wordCount}</Styled.WordCount>
       </Styled.TextAreaWrapper>
       {hasButton && (
-        <Styled.SubmitButton aria-label="save" disabled={!value || value === defaultValue}>
-          Save
-        </Styled.SubmitButton>
+        <Styled.SubmitButton disabled={!value || value === defaultValue}>Save</Styled.SubmitButton>
       )}
     </Styled.Root>
   );
